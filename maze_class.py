@@ -9,7 +9,7 @@ class Maze:
         self.goal = None
 
     def draw(self, resolution):
-        gap_size = max(round(1+(1/4) * (len(self.grid)//(round(np.log(resolution)+1)))), 1)
+        gap_size = max(round((1/4) * (len(self.grid)//(round(np.log(resolution)+1)))), 1)
 
         # Add boarder to map
         self.grid[0, :] = 1
@@ -21,7 +21,7 @@ class Maze:
         while step < resolution:
             step += 1
             step2 = 0
-            while step2 < resolution+100:
+            while step2 < 100:
                 step2 += 1
                 # Pick a ranom spot in the grid
                 test_x = np.random.randint(1, self.grid.shape[0] - 1)

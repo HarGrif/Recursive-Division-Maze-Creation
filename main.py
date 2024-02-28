@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 from maze_class import Maze
 
 maze_size = 25
-resolution = 4
+resolution = 5
 
 maze = Maze(maze_size)
 maze.draw(resolution)
