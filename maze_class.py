@@ -98,3 +98,11 @@ class Maze:
                         else:
                             self.grid[wall_point, edges[1][1] - gap_size:edges[1][1]] = 2
                     break
+        
+        finding = True
+        while finding:
+            if self.grid[self.start[1], self.start[0]] == 0:
+                if self.grid[self.goal[1], self.goal[0]] == 0:
+                    # Check start and goal are 3/4 of the map apart
+                    if math.dist(self.start, self.goal) >= map_size:
+                        finding = False
