@@ -1,6 +1,6 @@
 import numpy as np
 from copy import deepcopy
-
+import math
 
 class Maze:
     def __init__(self, map_size):
@@ -10,7 +10,7 @@ class Maze:
 
     def draw(self, resolution):
         gap_size = max(round((1/4) * (len(self.grid)//(round(np.log(resolution)+1)))), 1)
-
+        map_size = len(self.grid)
         # Add boarder to map
         self.grid[0, :] = 1
         self.grid[-1, :] = 1
@@ -99,8 +99,12 @@ class Maze:
                             self.grid[wall_point, edges[1][1] - gap_size:edges[1][1]] = 2
                     break
         
+        self.grid[self.grid == 2] = 0
+
         finding = True
         while finding:
+            self.start = [np.random.randint(1, map_size), np.random.randint(1, map_size)]
+            self.goal = [np.random.randint(1, map_size), np.random.randint(1, map_size)]
             if self.grid[self.start[1], self.start[0]] == 0:
                 if self.grid[self.goal[1], self.goal[0]] == 0:
                     # Check start and goal are 3/4 of the map apart
