@@ -24,7 +24,7 @@ It was created as a sub-project of my Final Year Project on Genetic Algorithms a
 
 The function simply takes two parameters, map size and map resolution. Map size is allocated when creating a the class and the resolution is then given when you populate the map.
 
-See the example script [here](link) for more info.
+See the example script [here](example_scipt.py) for more info.
 
 ## Contribution, Modification and Distribution
 
